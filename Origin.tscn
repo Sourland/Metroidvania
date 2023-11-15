@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg63bgmgvf3f1"]
+[gd_scene load_steps=9 format=3 uid="uid://dg63bgmgvf3f1"]
 
 [ext_resource type="Texture2D" uid="uid://l87cyhnw6ni2" path="res://Assets/Tilemaps/TX Tileset Ground.png" id="1_i5t33"]
 [ext_resource type="Texture2D" uid="uid://hl4yp7no5bp0" path="res://Assets/Tilemaps/TX Village Props.png" id="1_v1for"]
 [ext_resource type="Texture2D" uid="uid://c2fnctco0bs52" path="res://Assets/Tilemaps/tilesetOpenGameBackground.png" id="2_nwmqn"]
+[ext_resource type="PackedScene" uid="uid://dua1kk7avl6nm" path="res://moving_platform.tscn" id="4_18rsm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dm4th"]
 texture = ExtResource("1_v1for")
@@ -2706,3 +2707,5 @@ layer_1/tile_data = PackedInt32Array(393216, 262156, 0, 458752, 262156, 1, 39321
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+
+[node name="MovingPlatform" parent="." instance=ExtResource("4_18rsm")]
