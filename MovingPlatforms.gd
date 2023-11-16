@@ -1,11 +1,15 @@
-extends Node2D
+extends CharacterBody2D
+
+@export var starting_position : Vector2
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	position = starting_position
 
+func _physics_process(delta):
+	velocity = Vector2(0, get_parent().direction * get_parent().speed)  # Velocity for downward movement
+	move_and_collide(velocity * delta)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_area_2d_body_entered(body):
+	if body is CharacterBody2D: 
+		body.position = get_parent().reset_position
