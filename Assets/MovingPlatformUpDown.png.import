@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc6tx4fqoal2t"
-path="res://.godot/imported/MovingPlatform.png-6435532c059b3ad6d77b33c88adde1cd.ctex"
+path="res://.godot/imported/MovingPlatformUpDown.png-3bfc9b23fa4dcaeb7226bb981a877c2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MovingPlatform.png"
-dest_files=["res://.godot/imported/MovingPlatform.png-6435532c059b3ad6d77b33c88adde1cd.ctex"]
+source_file="res://Assets/MovingPlatformUpDown.png"
+dest_files=["res://.godot/imported/MovingPlatformUpDown.png-3bfc9b23fa4dcaeb7226bb981a877c2b.ctex"]
 
 [params]
 

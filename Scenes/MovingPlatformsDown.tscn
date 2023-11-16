@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://djs6t6ufcudk5"]
+
+[ext_resource type="Script" path="res://Src/MovingPlatformProperties.gd" id="1_i8u1e"]
+[ext_resource type="PackedScene" uid="uid://dua1kk7avl6nm" path="res://Scenes/moving_platform.tscn" id="2_x4gka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c7iq"]
+size = Vector2(154, 34.125)
+
+[node name="Down" type="Node2D"]
+position = Vector2(1040, 0)
+script = ExtResource("1_i8u1e")
+reset_position = Vector2(0, -816)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("2_x4gka")]
+position = Vector2(0, -816)
+starting_position = Vector2(0, -816)
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("2_x4gka")]
+position = Vector2(0, -560)
+starting_position = Vector2(0, -560)
+
+[node name="MovingPlatform3" parent="." instance=ExtResource("2_x4gka")]
+position = Vector2(0, -304)
+starting_position = Vector2(0, -304)
+
+[node name="MovingPlatform4" parent="." instance=ExtResource("2_x4gka")]
+position = Vector2(0, -48)
+starting_position = Vector2(0, -48)
+
+[node name="MovingPlatform5" parent="." instance=ExtResource("2_x4gka")]
+position = Vector2(0, 208)
+starting_position = Vector2(0, 208)
+
+[node name="PlatformResetter" type="Area2D" parent="."]
+position = Vector2(0, 496)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformResetter"]
+shape = SubResource("RectangleShape2D_3c7iq")
+
+[connection signal="body_entered" from="PlatformResetter" to="MovingPlatform2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="PlatformResetter" to="MovingPlatform3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="PlatformResetter" to="MovingPlatform4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="PlatformResetter" to="MovingPlatform5" method="_on_area_2d_body_entered"]
