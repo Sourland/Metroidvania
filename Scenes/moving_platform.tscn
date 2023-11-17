@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dc6tx4fqoal2t" path="res://Assets/MovingPlatformUpDown.png" id="2_didbk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dqjk"]
-size = Vector2(94, 30)
+size = Vector2(48, 8)
 
 [node name="MovingPlatform" type="CharacterBody2D"]
 script = ExtResource("1_ljbfd")
@@ -13,4 +13,5 @@ script = ExtResource("1_ljbfd")
 texture = ExtResource("2_didbk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_2dqjk")

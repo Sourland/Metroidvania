@@ -12,27 +12,27 @@ script = ExtResource("1_i8u1e")
 reset_position = Vector2(0, -816)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("2_x4gka")]
-position = Vector2(0, -816)
-starting_position = Vector2(0, -816)
+position = Vector2(0, -320)
+starting_position = Vector2(0, -320)
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("2_x4gka")]
-position = Vector2(0, -560)
-starting_position = Vector2(0, -560)
+position = Vector2(0, -192)
+starting_position = Vector2(0, -192)
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("2_x4gka")]
-position = Vector2(0, -304)
-starting_position = Vector2(0, -304)
+position = Vector2(0, -64)
+starting_position = Vector2(0, -64)
 
 [node name="MovingPlatform4" parent="." instance=ExtResource("2_x4gka")]
-position = Vector2(0, -48)
-starting_position = Vector2(0, -48)
+position = Vector2(0, 64)
+starting_position = Vector2(0, 64)
 
 [node name="MovingPlatform5" parent="." instance=ExtResource("2_x4gka")]
-position = Vector2(0, 208)
-starting_position = Vector2(0, 208)
+position = Vector2(0, 192)
+starting_position = Vector2(0, 192)
 
 [node name="PlatformResetter" type="Area2D" parent="."]
-position = Vector2(0, 496)
+position = Vector2(0, 352)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformResetter"]
 shape = SubResource("RectangleShape2D_3c7iq")
