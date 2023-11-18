@@ -11,5 +11,9 @@ func _physics_process(delta):
 	move_and_collide(velocity * delta)
 
 func _on_area_2d_body_entered(body):
-	if body is CharacterBody2D: 
+	if body is CharacterBody2D and body.name != "MainPlayer": 
+		body.position = get_parent().reset_position
+
+func _on_platform_resetter_body_entered(body):
+	if body is CharacterBody2D and body.name != "MainPlayer": 
 		body.position = get_parent().reset_position

@@ -37,6 +37,7 @@ position = Vector2(0, 352)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformResetter"]
 shape = SubResource("RectangleShape2D_3c7iq")
 
+[connection signal="body_entered" from="PlatformResetter" to="MovingPlatform" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="PlatformResetter" to="MovingPlatform2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="PlatformResetter" to="MovingPlatform3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="PlatformResetter" to="MovingPlatform4" method="_on_area_2d_body_entered"]
