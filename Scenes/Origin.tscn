@@ -2523,20 +2523,24 @@ size = Vector2(10, 10)
 [node name="Up" parent="." instance=ExtResource("4_735v1")]
 z_index = 1
 reset_position = Vector2(0, 320)
+reset_trigger_y = 320
 
 [node name="Down" parent="." instance=ExtResource("5_eo6aw")]
 z_index = 1
 reset_position = Vector2(0, -320)
+reset_trigger_y = -320
 
 [node name="Up2" parent="." instance=ExtResource("4_735v1")]
 z_index = 1
 position = Vector2(-1046, 450)
 reset_position = Vector2(0, 320)
+reset_trigger_y = 320
 
 [node name="Down2" parent="." instance=ExtResource("5_eo6aw")]
 z_index = 1
 position = Vector2(-750, 450)
 reset_position = Vector2(0, -320)
+reset_trigger_y = -320
 
 [node name="MovingPlatformNSEW" parent="." instance=ExtResource("4_2iyo5")]
 
@@ -2579,4 +2583,3 @@ shape = SubResource("RectangleShape2D_dw0g7")
 [node name="Camera2D" type="Camera2D" parent="MainPlayer"]
 z_index = 2
 scale = Vector2(1e-05, 1e-05)
-zoom = Vector2(2, 2)
