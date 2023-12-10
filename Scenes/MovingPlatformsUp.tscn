@@ -4,27 +4,25 @@
 [ext_resource type="PackedScene" uid="uid://dua1kk7avl6nm" path="res://Scenes/moving_platform.tscn" id="2_rowsy"]
 
 [node name="Up" type="Node2D"]
-position = Vector2(1680, 0)
 script = ExtResource("1_e7kx6")
 direction = -1
 reset_position = Vector2(0, 464)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("2_rowsy")]
-position = Vector2(0, -192)
+position = Vector2(0, -256)
 starting_position = Vector2(0, -192)
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("2_rowsy")]
-position = Vector2(0, -64)
+position = Vector2(0, -128)
 starting_position = Vector2(0, -64)
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("2_rowsy")]
-position = Vector2(0, 64)
 starting_position = Vector2(0, 64)
 
 [node name="MovingPlatform4" parent="." instance=ExtResource("2_rowsy")]
-position = Vector2(0, 192)
+position = Vector2(0, 128)
 starting_position = Vector2(0, 192)
 
 [node name="MovingPlatform5" parent="." instance=ExtResource("2_rowsy")]
-position = Vector2(0, 320)
+position = Vector2(0, 256)
 starting_position = Vector2(0, 320)
