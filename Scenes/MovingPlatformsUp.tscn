@@ -1,45 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://18ta3o0h7p6a"]
+[gd_scene load_steps=3 format=3 uid="uid://18ta3o0h7p6a"]
 
 [ext_resource type="Script" path="res://Src/MovingPlatformProperties.gd" id="1_e7kx6"]
 [ext_resource type="PackedScene" uid="uid://dua1kk7avl6nm" path="res://Scenes/moving_platform.tscn" id="2_rowsy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_csrn2"]
-size = Vector2(154, 34.125)
-
 [node name="Up" type="Node2D"]
-position = Vector2(1680, 0)
 script = ExtResource("1_e7kx6")
 direction = -1
 reset_position = Vector2(0, 464)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("2_rowsy")]
-position = Vector2(0, -192)
+position = Vector2(0, -256)
 starting_position = Vector2(0, -192)
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("2_rowsy")]
-position = Vector2(0, -64)
+position = Vector2(0, -128)
 starting_position = Vector2(0, -64)
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("2_rowsy")]
-position = Vector2(0, 64)
 starting_position = Vector2(0, 64)
 
 [node name="MovingPlatform4" parent="." instance=ExtResource("2_rowsy")]
-position = Vector2(0, 192)
+position = Vector2(0, 128)
 starting_position = Vector2(0, 192)
 
 [node name="MovingPlatform5" parent="." instance=ExtResource("2_rowsy")]
-position = Vector2(0, 320)
+position = Vector2(0, 256)
 starting_position = Vector2(0, 320)
-
-[node name="PlatformResetter" type="Area2D" parent="."]
-position = Vector2(0, -352)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformResetter"]
-shape = SubResource("RectangleShape2D_csrn2")
-
-[connection signal="body_entered" from="PlatformResetter" to="MovingPlatform" method="_on_platform_resetter_body_entered"]
-[connection signal="body_entered" from="PlatformResetter" to="MovingPlatform2" method="_on_platform_resetter_body_entered"]
-[connection signal="body_entered" from="PlatformResetter" to="MovingPlatform3" method="_on_platform_resetter_body_entered"]
-[connection signal="body_entered" from="PlatformResetter" to="MovingPlatform4" method="_on_platform_resetter_body_entered"]
-[connection signal="body_entered" from="PlatformResetter" to="MovingPlatform5" method="_on_platform_resetter_body_entered"]

@@ -1,13 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://dq4oinv3pdaey"]
 
-[ext_resource type="Script" path="res://Src/MovingPlatformNSEW.gd" id="1_da5ys"]
+[ext_resource type="Script" path="res://Src/MovingPlatformUpDown.gd" id="1_da5ys"]
 [ext_resource type="Texture2D" uid="uid://dc6tx4fqoal2t" path="res://Assets/MovingPlatformUpDown.png" id="2_mfmv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vefhv"]
 size = Vector2(48, 6)
 
 [node name="MovingPlatformNSEW" type="CharacterBody2D"]
-position = Vector2(-144, 608)
 script = ExtResource("1_da5ys")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
