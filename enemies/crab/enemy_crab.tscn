@@ -1,39 +1,39 @@
-[gd_scene load_steps=14 format=3 uid="uid://je6yq1p6ycph"]
+[gd_scene load_steps=15 format=3 uid="uid://je6yq1p6ycph"]
 
-[ext_resource type="Script" path="res://enemies/enemy_crab.gd" id="1_6ml3t"]
-[ext_resource type="Texture2D" uid="uid://3bbg35p3v8t6" path="res://enemies/crab-idle.png" id="1_hj32k"]
-[ext_resource type="Texture2D" uid="uid://bewaqwniqdc8t" path="res://enemies/crab-walk.png" id="2_60wjg"]
+[ext_resource type="Script" path="res://enemies/crab/enemy_crab.gd" id="1_6ml3t"]
+[ext_resource type="Texture2D" uid="uid://3bbg35p3v8t6" path="res://enemies/crab/crab-idle.png" id="2_g7x2l"]
+[ext_resource type="Texture2D" uid="uid://bewaqwniqdc8t" path="res://enemies/crab/crab-walk.png" id="3_vlg7f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8se1"]
-atlas = ExtResource("1_hj32k")
+atlas = ExtResource("2_g7x2l")
 region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2ddd"]
-atlas = ExtResource("1_hj32k")
+atlas = ExtResource("2_g7x2l")
 region = Rect2(48, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0dca4"]
-atlas = ExtResource("1_hj32k")
+atlas = ExtResource("2_g7x2l")
 region = Rect2(96, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h8ej0"]
-atlas = ExtResource("1_hj32k")
+atlas = ExtResource("2_g7x2l")
 region = Rect2(144, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwrjt"]
-atlas = ExtResource("2_60wjg")
+atlas = ExtResource("3_vlg7f")
 region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cwyvy"]
-atlas = ExtResource("2_60wjg")
+atlas = ExtResource("3_vlg7f")
 region = Rect2(48, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srf7g"]
-atlas = ExtResource("2_60wjg")
+atlas = ExtResource("3_vlg7f")
 region = Rect2(96, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgnxn"]
-atlas = ExtResource("2_60wjg")
+atlas = ExtResource("3_vlg7f")
 region = Rect2(144, 0, 48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r5r2e"]
@@ -79,7 +79,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wsssk"]
-radius = 15.0
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvi0q"]
+radius = 16.0312
 
 [node name="EnemyCrab" type="CharacterBody2D"]
 script = ExtResource("1_6ml3t")
@@ -91,6 +94,23 @@ animation = &"walk"
 frame_progress = 0.999252
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(0, -14)
 shape = SubResource("CircleShape2D_wsssk")
-debug_color = Color(0.785466, 0, 0.0954537, 0.42)
+debug_color = Color(0, 0.454902, 0.792157, 0.415686)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(-1, -1)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(2, -13)
+shape = SubResource("CircleShape2D_jvi0q")
+debug_color = Color(0.843137, 0, 0.380392, 0.419608)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
