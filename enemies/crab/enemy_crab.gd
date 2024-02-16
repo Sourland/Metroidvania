@@ -13,10 +13,12 @@ var enemy_death_effect = preload("res://enemies/enemy_death_effect.tscn")
 @export var health_points: int = 5
 
 enum States {Idle, Walk}
+
 var point_positions : Array[Vector2]
-var current_point_position : int
-var current_state : States
 var current_point : Vector2
+var current_point_position : int
+
+var current_state : States
 var can_walk : int
 
 func _ready():
