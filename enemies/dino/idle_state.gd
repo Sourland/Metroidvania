@@ -3,6 +3,9 @@ extends State
 @export var attack_state : State
 @export var patrol_state : State
 
+func enter():
+	super()
+
 func process_frame(delta : float) -> State:
 	if enemy_parent.scan_area.has_overlapping_areas() and enemy_parent.can_attack:
 		return attack_state
@@ -22,5 +25,8 @@ func process_signal(context, parameters) -> State:
 		if enemy_parent.can_attack:
 			return attack_state
 	if parameters == "timeout":
+		enemy_parent.can_walk = true
+		enemy_parent.animations.flip_h = enemy_parent.direction.x > 0
+		enemy_parent.scan_area.position.x = abs(enemy_parent.scan_area.position.x) if enemy_parent.animations.flip_h else -abs(enemy_parent.scan_area.position.x)
 		return patrol_state
 	return null

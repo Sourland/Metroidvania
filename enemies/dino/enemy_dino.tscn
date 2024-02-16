@@ -139,9 +139,10 @@ script = ExtResource("6_54bhk")
 idle_state = NodePath("../Idle")
 animation_name = "attack"
 
-[node name="Patrol" type="Node" parent="StateMachine" node_paths=PackedStringArray("attack_state")]
+[node name="Patrol" type="Node" parent="StateMachine" node_paths=PackedStringArray("attack_state", "idle_state")]
 script = ExtResource("7_7cln2")
 attack_state = NodePath("../Attack")
+idle_state = NodePath("../Idle")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 4
@@ -162,11 +163,14 @@ shape = SubResource("RectangleShape2D_lvtdy")
 
 [node name="Attributes" type="Node" parent="."]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="IdleTimer" type="Timer" parent="."]
 wait_time = 2.5
 autostart = true
+
+[node name="PatrolTimer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="ScanArea" to="." method="_on_scan_area_body_entered"]
 [connection signal="body_exited" from="ScanArea" to="." method="_on_scan_area_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="PatrolTimer" to="." method="_on_patrol_timer_timeout"]
